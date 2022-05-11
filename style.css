@@ -172,23 +172,6 @@ a, a:visited {
 }
 
 .photo {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: black;
   width: 15em;
   height: 15em;
-  background-attachment: fixed;
-}
-
-#photo-1 {
-  background-image: url("./images/photo-1.jpg");
-}
-
-#photo-2 {
-  background-image: url("./images/photo-2.jpg");
-}
-
-#photo-3 {
-  background-image: url("./images/photo-3.jpg");
 }
