@@ -1,11 +1,11 @@
 @font-face {
   font-family: KawashiroGothic;
-  src: url("/fonts/KawashiroGothic-Lla5.ttf");
+  src: url("./fonts/KawashiroGothic-Lla5.ttf");
 }
 
 @font-face {
   font-family: : Melancholy;
-  src: url("/fonts/Melancholy-PersonalUse.woff");
+  src: url("./fonts/Melancholy-PersonalUse.woff");
 }
 
 * {
@@ -43,8 +43,9 @@ body {
 }
 
 #header-img {
-  width: 4em;
+  width: 2.5em;
   height: auto;
+  margin-right: 0.25em;
 }
 
 #header-title {
@@ -55,7 +56,6 @@ body {
 #header-right {
   display: flex;
   align-items: center;
-  margin-right: 1em;
 }
 
 i {
@@ -66,7 +66,7 @@ i {
 
 #header-front {
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 10px 0px;
+  padding: 10px 1em;
   justify-content: space-between;
   width: 100%;
   display: flex;
@@ -155,9 +155,12 @@ a, a:visited {
   flex-direction: column;
   align-items: center;
   padding-bottom: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
-#photos > h3 {
+h3 {
+  text-align: center;
   font-size: 2em;
   font-weight: bolder;
   font-family: Melancholy;
@@ -174,4 +177,25 @@ a, a:visited {
 .photo {
   width: 15em;
   height: 15em;
+}
+
+#videos {
+  padding-left: 1em;
+  padding-right: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding-top: 5em;
+  gap: 2em;
+  padding-bottom: 2em;
+}
+
+#videos > h3 {
+  color: rgb(243, 210, 80);
+}
+
+#video {
+  width: 15em;
+  height: 10em;
 }

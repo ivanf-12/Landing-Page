@@ -1,5 +1,5 @@
 const menu_bar = document.querySelector("#menu-bar");
-const nav_bar = document.querySelector("#nav-bar")
+const nav_bar = document.querySelector("#nav-bar");
 
 menu_bar.addEventListener('click', ()=>{
   if(nav_bar.classList.contains("active")){
