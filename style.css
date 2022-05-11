@@ -1,19 +1,31 @@
+@font-face {
+  font-family: KawashiroGothic;
+  src: url("/fonts/KawashiroGothic-Lla5.ttf");
+}
+
 * {
-  font-family: 'Arvo', serif;
+  font-family: 'Koulen', cursive;
   padding: 0;
   margin: 0;
   flex-wrap: wrap;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 body {
+  background-image: linear-gradient(rgba(243, 210, 80, 0.5), 
+    rgba(243, 210, 80, 0.45)), url("images/shiba-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   width: 100%;
   height: 100%;
-  background-color: #A8D0E6;
 }
 
 #header {
+  width: 100%;
   padding: 10px 0px;
-  background-color: #24305E;
+  background-color: rgba(236, 236, 236, 0.9);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,28 +43,34 @@ body {
 
 #header-title {
   font-size: 1.5em;
-  color: white;
+  color: black;
 }
 
 #header-right {
+  display: flex;
+  align-items: center;
   margin-right: 1em;
 }
 
 i {
+  cursor: pointer;
   font-size: 1.5em;
-  color: white;
+  color: black;
 }
 
 #menu-extension {
+  width: 100%;
+  position: fixed;
   display: flex;
   justify-content: flex-end;
   visibility: hidden;
 }
 
 #nav-bar {
+  height: 100%;
+  padding: 1.75em 2em;
   margin-top: 0.05em;
-  padding: 35px 30px;
-  background-color: #24305E;
+  background-color: rgba(236, 236, 236, 0.9);
 }
 
 .active {
@@ -62,7 +80,7 @@ i {
 ul {
   display: flex;
   flex-direction: column;
-  gap: 3em;
+  gap: 2em;
   list-style-type: none;
 }
 
@@ -72,8 +90,42 @@ li {
 
 a, a:visited {
   font-weight: bolder;
-  font-size: 1.25em;
+  font-size: 1em;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
-  color: white;
+  color: black;
+}
+
+#about {
+  width: 100%;
+  margin-top: 5em;
+  padding: 0em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#welcome-card {
+  gap: 2em;
+  text-align: center;
+  border-radius: 7px;
+  background-color: rgba(236, 236, 236, 0.7);
+  padding: 1em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#welcome-card > h1 {
+  color: black;
+  font-size: 2em;
+  font-family: KawashiroGothic;
+}
+
+#welcome-card > p {
+  color: black;
+  font-size: 1.25em;
+  line-height: 1.5em;
+  font-family: times-new-roman;
+  text-align: justify;
 }
