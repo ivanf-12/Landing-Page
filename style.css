@@ -3,6 +3,11 @@
   src: url("/fonts/KawashiroGothic-Lla5.ttf");
 }
 
+@font-face {
+  font-family: : Melancholy;
+  src: url("/fonts/Melancholy-PersonalUse.woff");
+}
+
 * {
   font-family: 'Koulen', cursive;
   padding: 0;
@@ -18,17 +23,18 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
 }
 
 #header {
   width: 100%;
-  padding: 10px 0px;
-  background-color: rgba(236, 236, 236, 0.9);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  position: fixed;
+  top: 0;
 }
 
 #header-left {
@@ -58,9 +64,18 @@ i {
   color: black;
 }
 
-#menu-extension {
+#header-front {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 0px;
+  justify-content: space-between;
   width: 100%;
-  position: fixed;
+  display: flex;
+  align-items: center;
+
+}
+
+#menu-extension {
+  align-self: flex-end;
   display: flex;
   justify-content: flex-end;
   visibility: hidden;
@@ -70,7 +85,7 @@ i {
   height: 100%;
   padding: 1.75em 2em;
   margin-top: 0.05em;
-  background-color: rgba(236, 236, 236, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .active {
@@ -98,18 +113,19 @@ a, a:visited {
 
 #about {
   width: 100%;
-  margin-top: 5em;
+  margin-top: 10em;
   padding: 0em 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 2em;
 }
 
 #welcome-card {
   gap: 2em;
   text-align: center;
   border-radius: 7px;
-  background-color: rgba(236, 236, 236, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 1em 2em;
   display: flex;
   flex-direction: column;
@@ -128,4 +144,51 @@ a, a:visited {
   line-height: 1.5em;
   font-family: times-new-roman;
   text-align: justify;
+}
+
+#photos {
+  gap: 2em;
+  background-color: #F3D250;
+  padding-top: 5em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2em;
+}
+
+#photos > h3 {
+  font-size: 2em;
+  font-weight: bolder;
+  font-family: Melancholy;
+  color: white;
+}
+
+#photos-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+.photo {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+  width: 15em;
+  height: 15em;
+  background-attachment: fixed;
+}
+
+#photo-1 {
+  background-image: url("./images/photo-1.jpg");
+}
+
+#photo-2 {
+  background-image: url("./images/photo-2.jpg");
+}
+
+#photo-3 {
+  background-image: url("./images/photo-3.jpg");
 }
