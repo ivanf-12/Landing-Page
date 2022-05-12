@@ -9,7 +9,7 @@
 }
 
 * {
-  font-family: 'Koulen', cursive;
+  font-family: Melancholy;
   padding: 0;
   margin: 0;
   flex-wrap: wrap;
@@ -49,6 +49,7 @@ body {
 }
 
 #header-title {
+  font-family: 'Koulen', cursive;
   font-size: 1.5em;
   color: black;
 }
@@ -135,14 +136,13 @@ a, a:visited {
 #welcome-card > h1 {
   color: black;
   font-size: 2em;
-  font-family: 'Melancholy';
 }
 
 #welcome-card > p {
   color: black;
   font-size: 1.25em;
   line-height: 1.5em;
-  font-family: times-new-roman;
+  font-family: 'Tinos', serif;
   text-align: justify;
 }
 
@@ -160,7 +160,6 @@ h3 {
   text-align: center;
   font-size: 2em;
   font-weight: bolder;
-  font-family: Melancholy;
   color: white;
 }
 
@@ -223,7 +222,6 @@ form {
 
 input {
   color: black;
-  font-family: 'Melancholy';
   padding: 1em;
   border: 0px;
 }
