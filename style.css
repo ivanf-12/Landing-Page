@@ -1,3 +1,12 @@
+* {
+  font-family: KawashiroGothic;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
 @font-face {
   font-family: KawashiroGothic;
   src: url("./fonts/KawashiroGothic-Lla5.ttf");
@@ -6,15 +15,6 @@
 @font-face {
   font-family: : Melancholy;
   src: url("./fonts/Melancholy-PersonalUse.woff");
-}
-
-* {
-  font-family: KawashiroGothic;
-  padding: 0;
-  margin: 0;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  max-width: 100%;
 }
 
 body {
@@ -26,90 +26,73 @@ body {
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
+  overflow-x: hide;
+}
+
+.sr-only {
+  position: absolute;
+  margin: -1px 0 0 -1px;
+  padding: 0;
+  display: block;
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+  line-height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+  outline: 0;
 }
 
 #header {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
   top: 0;
-}
-
-#header-left {
+  position: fixed;
+  z-index: 1000;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 #header-img {
-  width: 2.5em;
+  margin: 0.5rem;
+  width: 3rem;
   height: auto;
-  margin-right: 0.25em;
-}
-
-#header-title {
-  font-family: 'Koulen', cursive;
-  font-size: 1.5em;
-  color: black;
-}
-
-#header-right {
-  display: flex;
-  align-items: center;
-}
-
-i {
-  cursor: pointer;
-  font-size: 1.5em;
-  color: black;
-}
-
-#header-front {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 10px 1em;
-  justify-content: space-between;
-  width: 100%;
-  display: flex;
-  align-items: center;
-
-}
-
-#menu-extension {
-  align-self: flex-end;
-  display: flex;
-  justify-content: flex-end;
-  visibility: hidden;
 }
 
 #nav-bar {
-  height: 100%;
-  padding: 1.75em 2em;
-  margin-top: 0.05em;
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.active {
-  visibility: visible;
-}
-
-ul {
   display: flex;
-  flex-direction: column;
-  gap: 2em;
   list-style-type: none;
+  gap: 2rem;
+  background-color: hsl(0, 0%, 100%, 0.75);
+  padding: 1rem;
 }
 
-li {
-  text-align: center;
-}
-
-a, a:visited {
-  font-weight: bolder;
-  font-size: 1em;
-  font-family: sans-serif;
-  text-decoration: none;
+#nav-bar a, #nav-bar a:visited {
   color: black;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+#nav-bar a [aria-hidden="true"] {
+  font-weight: 800;
+  margin-inline-end: 0.5rem;
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+  #nav-bar {
+    background-color: hsl(0, 0%, 100%, 0.1);
+    backdrop-filter: blur(1rem);
+  }
+  #nav-bar a, #nav-bar a:visited {
+    text-shadow: 0 0 5px black;
+    color: white;
+  }
+}
+
+#menu-toggle {
+  display: none;
 }
 
 #about {
@@ -189,8 +172,9 @@ h3 {
 }
 
 #video {
-  width: 21em;
-  height: 14em;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  max-width: 80vw;
 }
 
 #forms {
@@ -237,27 +221,48 @@ input {
   background-color: rgb(243, 210, 80);
 }
 
-#submit : hover {
+#submit:hover {
   background-color: rgb(238, 194, 17);
 }
 
-@media only screen and (min-width: 375px) {
-  #video {
-    width: 24em;
-    height: 16em;
+@media (max-width: 35em) {
+  #menu-toggle {
+    display: block;
+    z-index: 9999;
+    top: 1.15rem;
+    right: 1rem;
+    color: white;
+    position: absolute;
+  }
+
+  i {
+    font-size: 2rem;
+    color: rgb(243, 210, 80);
+    text-shadow: 0 0 5px black;
+  }
+
+  #nav-bar {
+    z-index: 1000;
+    gap: 3em;
+    position: fixed;
+    inset: 0 0 0 30%;
+    flex-direction: column;
+    padding: min(20vh, 10rem) 2em;
+    transition: 350ms ease-out;
+    flex-wrap: nowrap;
+  }  
+
+  #nav-bar[data-visible="false"] {
+    transform: translateX(100%);
+  }
+
+  #nav-bar[data-visible="true"] {
+    transform: translateX(0%);
   }
 }
 
-@media only screen and (min-width: 425px) {
-  #video {
-    width: 27em;
-    height: 18em;
-  }
-}
-
-@media only screen and (min-width: 768px) { /*Tablet*/
-  #video {
-    width: 30em;
-    height: 20em;
+@media (min-width: 35em) and (max-width: 55em) {
+  #nav-bar a [aria-hidden="true"] {
+    display: none;
   }
 }

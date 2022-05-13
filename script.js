@@ -1,15 +1,12 @@
-const menu_bar = document.querySelector("#menu-bar");
-const nav_bar = document.querySelector("#nav-bar");
+const menu_bar = document.querySelector("#menu-toggle");
+const navBar = document.querySelector("#nav-bar");
 
 menu_bar.addEventListener('click', ()=>{
-  if(nav_bar.classList.contains("active")){
-    nav_bar.classList.remove("active");
-    menu_bar.classList.remove("fa-xmark");
-    menu_bar.classList.add("fa-bars");
+  const visibility = navBar.getAttribute('data-visible');
+  if(visibility === "false") {
+    navBar.setAttribute('data-visible', true);
   }
-  else{
-   menu_bar.classList.remove("fa-bars");
-   menu_bar.classList.add("fa-xmark");
-   nav_bar.classList.add("active");
- }
+  else {
+    navBar.setAttribute('data-visible', false);
+  }
 });

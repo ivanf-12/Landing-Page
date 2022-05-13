@@ -26,24 +26,17 @@
 </head>
 <body>
   <header id="header">
-    <div id="header-front">
-      <div id="header-left">
-        <img id="header-img" src="./images/shiba.png">
-        <div id="header-title">Shiba</div>
-      </div>
-      <div id="header-right">
-        <i id="menu-bar" class="fa-solid fa-bars"></i>
-      </div>
+    <img id="header-img" src="./images/shiba.png">
+    <div id="menu-toggle" aria-controls="nav-bar" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
     </div>
-    <div id="menu-extension">
-      <nav id="nav-bar">
-        <ul>
-          <li ><a class="nav-link" href="#about">About</a></li>
-          <li ><a class="nav-link" href="#photos">Photos</a></li>
-          <li ><a class="nav-link" href="#videos">Videos</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <ul id="nav-bar" data-visible="false">
+        <li><a class="nav-link" href="#about"><span aria-hidden="true">00</span>About</a></li>
+        <li><a class="nav-link" href="#photos"><span aria-hidden="true">01</span>Photos</a></li>
+        <li><a class="nav-link" href="#videos"><span aria-hidden="true">02</span>Videos</a></li>
+      </ul>
+    </nav>
   </header>
   <div id="about">
     <div id="welcome-card">
