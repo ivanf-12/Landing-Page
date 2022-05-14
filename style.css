@@ -64,7 +64,7 @@ body {
   display: flex;
   list-style-type: none;
   gap: 2rem;
-  background-color: hsl(0, 0%, 100%, 0.75);
+  background-color: hsl(0, 0%, 0%, 0.75);
   padding: 1rem;
 }
 
@@ -86,7 +86,7 @@ body {
     backdrop-filter: blur(1rem);
   }
   #nav-bar a, #nav-bar a:visited {
-    text-shadow: 0 0 5px black;
+    text-shadow: 0 0 10px black;
     color: white;
   }
 }
@@ -116,12 +116,19 @@ body {
   align-items: center;
 }
 
-#welcome-card > h1 {
+#welcome-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#welcome-text > h1 {
   color: black;
   font-size: 2em;
 }
 
-#welcome-card > p {
+#welcome-text > p {
   color: black;
   font-size: 1.25em;
   line-height: 1.5em;
@@ -212,12 +219,13 @@ input {
 
 #email {
   font-family: sans-serif;
+  width: min(25rem, 75vw);
 }
 
 #submit {
   font-family: sans-serif;
   font-weight: bolder;
-  width: 75%;
+  width: min(75%, 10rem);
   background-color: rgb(243, 210, 80);
 }
 
@@ -264,5 +272,63 @@ input {
 @media (min-width: 35em) and (max-width: 55em) {
   #nav-bar a [aria-hidden="true"] {
     display: none;
+  }
+}
+
+@media (min-width: 35em) {
+  #nav-bar {
+    background-color: transparent;
+    backdrop-filter: none;
+  }
+  
+  #nav-bar a, #nav-bar a:visited {
+    color: black;
+    text-shadow: none;
+  }
+  
+  #header {
+    background-color: white;
+  }
+} 
+
+@media (min-width: 55em) {
+  #about {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10rem;
+    padding-bottom: 2.5rem;
+  }
+
+  #welcome-card {
+    text-align: center;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7rem;
+  }
+
+  #welcome-text > h1 {
+    color: black;
+    font-size: 1.5rem;
+  }
+
+  #welcome-text > p {
+    text-align: center;
+    color: black;
+    font-size: 1rem;
+    font-family: 'Tinos', serif;
+    max-width: 20rem;
+  }
+
+  #welcome-card > img {
+    width: 20.75rem;
+    height: auto;
   }
 }
