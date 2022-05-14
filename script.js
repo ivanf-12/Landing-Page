@@ -1,12 +1,19 @@
-const menu_bar = document.querySelector("#menu-toggle");
+const menuBar = document.querySelector("#menu-toggle");
 const navBar = document.querySelector("#nav-bar");
+const menuImage = document.querySelector("i");
 
-menu_bar.addEventListener('click', ()=>{
+menuBar.addEventListener('click', ()=>{
   const visibility = navBar.getAttribute('data-visible');
   if(visibility === "false") {
+    menuBar.setAttribute('aria-expanded', true);
     navBar.setAttribute('data-visible', true);
   }
   else {
+    menuBar.setAttribute('aria-expanded', false);
     navBar.setAttribute('data-visible', false);
   }
+  menuImage.classList.toggle("fa-regular");
+  menuImage.classList.toggle("fa-solid");
+  menuImage.classList.toggle("fa-circle-xmark");
+  menuImage.classList.toggle("fa-bars");
 });
